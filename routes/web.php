@@ -25,6 +25,9 @@ Route::get('/index', function () {
 Route::get('/studentdetails', function () {
     return view('studentdetails');
 });
+Route::get('/studentinformation', function () {
+    return view('StudentInformation');
+});
 // Route::post('/subjectchoice', function () {
 //     return view('subjectchoice');
 // });

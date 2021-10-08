@@ -1,19 +1,5 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
-    <title>Login Form</title>
-</head>
-
-<body>
+@include('Layout.navbar')
+@section('form')
 
 
     <div class="container">
@@ -188,64 +174,5 @@
         </div>
     </div>
 
-    </div>
-    <script>
-        $(document).ready(function() {
 
-            var enrollType;
-            //  $("#div_id_As").hide();
-            $("input[name='As']").change(function() {
-                memberType = $("input[name='select']:checked").val();
-                providerType = $("input[name='As']:checked").val();
-                toggleIndividInfo();
-            });
-
-            $("input[name='select']").change(function() {
-                memberType = $("input[name='select']:checked").val();
-                toggleIndividInfo();
-                toggleLearnerTrainer();
-            });
-
-            function toggleLearnerTrainer() {
-
-                if (memberType == 'P' || enrollType == 'company') {
-                    $("#cityField").hide();
-                    $("#providerType").show();
-                    $(".provider").show();
-                    $(".locationField").show();
-                    if (enrollType == 'INSTITUTE') {
-                        $(".individ").hide();
-                    }
-
-                } else {
-                    $("#providerType").hide();
-                    $(".provider").hide();
-                    $('#name').show();
-                    $("#cityField").hide();
-                    $(".locationField").show();
-                    $("#instituteName").hide();
-                    $("#cityField").show();
-
-                }
-            }
-
-            function toggleIndividInfo() {
-
-                if (((typeof memberType !== 'undefined' && memberType == 'TRAINER') || enrollType == 'INSTITUTE') &&
-                    providerType == 'INDIVIDUAL') {
-                    $("#instituteName").hide();
-                    $(".individ").show();
-                    $('#name').show();
-                } else if ((typeof memberType !== 'undefined' && memberType == 'TRAINER') || enrollType ==
-                    'INSTITUTE') {
-                    $('#name').hide();
-                    $("#instituteName").show();
-                    $(".individ").hide();
-                }
-            }
-
-        });
-    </script>
-</body>
-
-</html>
+@endsection

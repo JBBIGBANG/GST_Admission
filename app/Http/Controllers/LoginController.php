@@ -101,7 +101,7 @@ class LoginController extends Controller
         //echo $this->listOfSubject;
 
         if ($data) {
-           return view('studentdetails', compact('data'));
+           return view('StudentInformation', compact('data'));
         } else {
            dd("Sorry");
         }
